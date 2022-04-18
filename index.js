@@ -104,17 +104,19 @@ const questions = [{
 // TODO: Create a function to write README file
 function writeToFile(answers) {
 
-    let createLicenseBadge = createMarkdown.renderLicense(answers.license);
+    let createLicenseBadge = createMarkdown.renderLicenseBadge(answers.license);
+    let createLicenseLink = createMarkdown.renderLicenseLink(answers.license);
     let finalAnswers = {
         ...answers,
         createLicenseBadge,
+        createLicenseLink,
     };
     // console.log(answers);
     // console.log(answers.title);
     // console.log(finalAnswers.license);
     // console.log(createMarkdown(finalAnswers));
     // console.log(createMarkdown(finalAnswers.title));
-    fs.writeFileSync("readme4.md", createMarkdown.generateMarkdown(finalAnswers))
+    fs.writeFileSync("readme5.md", createMarkdown.generateMarkdown(finalAnswers))
     // , (err) =>
     //     err ? console.error(err) : console.log("Success!"))
 
