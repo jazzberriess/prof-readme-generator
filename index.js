@@ -133,7 +133,7 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             writeToFile(answers);
-            console.log("README.md fild successfully generated.")
+            console.log("README.md file successfully generated.")
         })
         .catch((error) => console.error(error))
 }
