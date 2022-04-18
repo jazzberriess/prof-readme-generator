@@ -50,13 +50,12 @@ function renderLicense(license) {
       return "";
 
   }
-  return `[${licenseBadge}](${licenseLink})
-    License Badge`
+  return `[${licenseBadge}](${licenseLink})`
 
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge, licenseLink }) {
+function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge }) {
   // renderLicense();
   console.log(renderLicense.licenseLink, "Success!");
   return `# ${title}
@@ -66,13 +65,12 @@ function generateMarkdown({ title, description, installation, usage, contributio
 
   ${description}
 
-  ## Table of Contents
+## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#test)
-
+* [Tests](#tests)
 * [Questions](#questions)
 
 ## Installation
@@ -82,7 +80,7 @@ ${installation}
 ${usage}
 
 ## License   
-This application is covered under the [${license}](${licenseLink})
+This application is covered under the ${license} license.
 
 ## Contributing
 ${contribution}
@@ -93,10 +91,6 @@ ${test}
 ## Questions
 ${github}
 ${email}
-
-
-
-
 
 
 `;
