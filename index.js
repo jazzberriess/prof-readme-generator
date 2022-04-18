@@ -103,16 +103,20 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(answers) {
+
+    let createLicenseBadge = createMarkdown.renderLicense(answers.license);
     let finalAnswers = {
-        ...answers
+        ...answers,
+        createLicenseBadge,
     };
     // console.log(answers);
     // console.log(answers.title);
     // console.log(finalAnswers.license);
     // console.log(createMarkdown(finalAnswers));
     // console.log(createMarkdown(finalAnswers.title));
-    fs.writeFileSync("readme4.md", createMarkdown(finalAnswers), (err) =>
-        err ? console.error(err) : console.log("Success!"))
+    fs.writeFileSync("readme4.md", createMarkdown.generateMarkdown(finalAnswers))
+    // , (err) =>
+    //     err ? console.error(err) : console.log("Success!"))
 
 }
 
@@ -123,10 +127,11 @@ function init() {
         .then((answers) => {
             // console.log(createMarkdown(finalAnswers));
             writeToFile(answers);
-
+            console.log("Success!");
+            console.log(answers.license);
+            console.log(createMarkdown);
         })
-        .catch((error) => console.error(error)
-        )
+        .catch((error) => console.error(error))
 }
 
 // Function call to initialize app
