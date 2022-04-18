@@ -1,4 +1,3 @@
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -71,16 +70,13 @@ function renderLicenseLink(license) {
   return `${licenseLink}`
 }
 
-
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge, createLicenseLink }) {
 
   return `# ${title}
 
   ## Description
-  ${createLicenseBadge}
+  [${createLicenseBadge}](${createLicenseLink})
 
   ${description}
 
@@ -99,7 +95,7 @@ ${installation}
 ${usage}
 
 ## License   
-This application is covered under the ${license} [${createLicenseLink}]license.
+This application is covered under the [${license}](${createLicenseLink})license.
 
 ## Contributing
 ${contribution}
@@ -108,10 +104,7 @@ ${contribution}
 ${test}
 
 ## Questions
-${github}
-${email}
-
-
+If you have any questions, feel free to get in touch by visting [${github} on GitHub](https://github.com/${github}) or by [contacting me via email](mailto:${email})
 `;
 }
 
