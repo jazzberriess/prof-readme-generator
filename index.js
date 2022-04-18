@@ -10,6 +10,7 @@ const questions = [{
     name: "title",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter a title for your project\x1b[0m`
         }
         return true;
@@ -21,6 +22,7 @@ const questions = [{
     name: "description",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter a description for your project\x1b[0m`
         }
         return true;
@@ -32,6 +34,7 @@ const questions = [{
     name: "installation",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter installation instructions for your project\x1b[0m`
         }
         return true;
@@ -43,6 +46,7 @@ const questions = [{
     name: "usage",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter installation instructions for your project\x1b[0m`
         }
         return true;
@@ -54,6 +58,7 @@ const questions = [{
     name: "contribution",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter contribution instructions for your project\x1b[0m`
         }
         return true;
@@ -65,6 +70,7 @@ const questions = [{
     name: "test",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter test instructions for your project\x1b[0m`
         }
         return true;
@@ -83,6 +89,7 @@ const questions = [{
     name: "github",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter your GitHub username\x1b[0m`
         }
         return true;
@@ -94,6 +101,7 @@ const questions = [{
     name: "email",
     validate: (answer) => {
         if (!answer) {
+            //display validation error message in red rext so user recognises it as an alert-type message
             return `\x1b[31mPlease enter your email address \x1b[0m`
         }
         return true;
@@ -104,7 +112,7 @@ const questions = [{
 // TODO: Create a function to write README file
 function writeToFile(answers) {
 
-    //grab the data from the answers from the inquirer prompts and pass them to a new variable so that we can then pass that into the generateMarkdown function
+    //grab the data from the answers from the inquirer prompts and pass them to a new variable so that we can then pass that into the generateMarkdown function because it wouldn't let me do it any other way
     let createLicenseBadge = createMarkdown.renderLicenseBadge(answers.license);
     let createLicenseLink = createMarkdown.renderLicenseLink(answers.license);
 
@@ -115,8 +123,8 @@ function writeToFile(answers) {
     };
 
     //write to file function. 
-    //If you want to update the readme filename, do it here (though README.md files are always called README.md)
-    fs.writeFileSync("README.md", createMarkdown.generateMarkdown(finalAnswers))
+    //If you want to update the readme filename, do it here (NOTE: README.md files are always called README.md)
+    fs.writeFileSync("README-sample.md", createMarkdown.generateMarkdown(finalAnswers))
 }
 
 // TODO: Create a function to initialize app
