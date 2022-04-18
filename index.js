@@ -17,7 +17,7 @@ const questions = [{
 },
 {
     type: "input",
-    message: "Add a description for your project:",
+    message: "Please add a description for your project:",
     name: "description",
     validate: (answer) => {
         if (!answer) {
@@ -27,8 +27,8 @@ const questions = [{
     }
 },
 {
-    type: "input",
-    message: "Write the installation instructions for your project:",
+    type: "editor",
+    message: "Please enter the installation instructions for your project:",
     name: "installation",
     validate: (answer) => {
         if (!answer) {
@@ -38,7 +38,7 @@ const questions = [{
     }
 },
 {
-    type: "input",
+    type: "editor",
     message: "Please enter the usage instructions for your project:",
     name: "usage",
     validate: (answer) => {
@@ -49,7 +49,7 @@ const questions = [{
     }
 },
 {
-    type: "input",
+    type: "editor",
     message: "Please enter the contribution instructions for collaborators:",
     name: "contribution",
     validate: (answer) => {
@@ -60,7 +60,7 @@ const questions = [{
     }
 },
 {
-    type: "input",
+    type: "editor",
     message: "Please enter the test instructions for your project:",
     name: "test",
     validate: (answer) => {
@@ -90,7 +90,7 @@ const questions = [{
 },
 {
     type: "input",
-    message: "Please enter your email address:",
+    message: "Please enter your E-mail address:",
     name: "email",
     validate: (answer) => {
         if (!answer) {
