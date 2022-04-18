@@ -70,14 +70,14 @@ function renderLicenseLink(license) {
   return `${licenseLink}`
 }
 
-// TODO: Create a function to generate markdown for README
+// TODO: Create a function to generate markdown for README that pulls through the data retreived from the inquirer prompts
 function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge, createLicenseLink }) {
 
   return `# ${title}
 
-  ## Description
   [${createLicenseBadge}](${createLicenseLink})
 
+  ## Description
   ${description}
 
 ## Table of Contents
@@ -95,7 +95,7 @@ ${installation}
 ${usage}
 
 ## License   
-This application is covered under the [${license}](${createLicenseLink})license.
+This application is covered under the [${license}](${createLicenseLink}) license.
 
 ## Contributing
 ${contribution}
@@ -108,6 +108,7 @@ If you have any questions, feel free to get in touch by visting [${github} on Gi
 `;
 }
 
+//export modules for use
 module.exports = {
   generateMarkdown,
   renderLicenseBadge,

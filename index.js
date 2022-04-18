@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const createMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// TODO: Create an array of questions for user input/inquirer
 const questions = [{
     type: "input",
     message: "Please enter the title of your project:",
@@ -104,6 +104,7 @@ const questions = [{
 // TODO: Create a function to write README file
 function writeToFile(answers) {
 
+    //grab the data from the answers from the inquirer prompts and pass them to a new variable so that we can then pass that into the generateMarkdown function
     let createLicenseBadge = createMarkdown.renderLicenseBadge(answers.license);
     let createLicenseLink = createMarkdown.renderLicenseLink(answers.license);
 
@@ -112,15 +113,10 @@ function writeToFile(answers) {
         createLicenseBadge,
         createLicenseLink,
     };
-    // console.log(answers);
-    // console.log(answers.title);
-    // console.log(finalAnswers.license);
-    // console.log(createMarkdown(finalAnswers));
-    // console.log(createMarkdown(finalAnswers.title));
-    fs.writeFileSync("readme5.md", createMarkdown.generateMarkdown(finalAnswers))
-    // , (err) =>
-    //     err ? console.error(err) : console.log("Success!"))
 
+    //write to file function. 
+    //If you want to update the readme filename, do it here (though README.md files are always called README.md)
+    fs.writeFileSync("README.md", createMarkdown.generateMarkdown(finalAnswers))
 }
 
 // TODO: Create a function to initialize app
@@ -128,11 +124,8 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            // console.log(createMarkdown(finalAnswers));
             writeToFile(answers);
-            console.log("Success!");
-            console.log(answers.license);
-            console.log(createMarkdown);
+            console.log("README.md fild successfully generated.")
         })
         .catch((error) => console.error(error))
 }
