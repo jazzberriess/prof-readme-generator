@@ -56,19 +56,44 @@ function renderLicense(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge }) {
+function generateMarkdown({ title, description, installation, usage, contribution, test, license, github, email, createLicenseBadge, licenseLink }) {
   // renderLicense();
   console.log(renderLicense.licenseLink, "Success!");
   return `# ${title}
-  # ${description}
-  # ${installation}
-  # ${usage}
-  # ${contribution}
-  # ${test}
-  # ${license}
-  # ${github}
-  # ${email}
-  # ${createLicenseBadge}
+
+  ## Description
+  ${createLicenseBadge}
+
+  ${description}
+
+  ## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#test)
+
+* [Questions](#questions)
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## License   
+This application is covered under the [${license}](${licenseLink})
+
+## Contributing
+${contribution}
+
+## Tests
+${test}
+
+## Questions
+${github}
+${email}
+
 
 
 
